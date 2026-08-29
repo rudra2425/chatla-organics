@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: chatla-organics-api
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:10005/local?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+server:
+  port: ${PORT:8080}
